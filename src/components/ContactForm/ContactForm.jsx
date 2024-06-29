@@ -2,18 +2,18 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { nanoid } from "nanoid";
 import * as Yup from "yup";
 import formModule from "./ContactForm.module.css";
-const ContactForm = ({ addContact }) => {
-  const validationSchema = Yup.object().shape({
-    name: Yup.string()
-      .required("Required")
-      .min(3, "Too Short!")
-      .max(50, "Too Long!"),
-    number: Yup.string()
-      .required("Required")
-      .min(3, "Too short")
-      .max(50, "Too long"),
-  });
 
+const validationSchema = Yup.object().shape({
+  name: Yup.string()
+    .required("Required")
+    .min(3, "Too Short!")
+    .max(50, "Too Long!"),
+  number: Yup.number()
+    .required("Required")
+    .min(3, "Too short")
+    .max(50, "Too long"),
+});
+const ContactForm = ({ addContact }) => {
   const handleSubmit = (values, actions) => {
     const newContact = { id: nanoid(), ...values };
     addContact(newContact);
