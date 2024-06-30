@@ -8,7 +8,7 @@ const validationSchema = Yup.object().shape({
     .required("Required")
     .min(3, "Too Short!")
     .max(50, "Too Long!"),
-  number: Yup.number()
+  number: Yup.string()
     .required("Required")
     .min(3, "Too short")
     .max(50, "Too long"),
