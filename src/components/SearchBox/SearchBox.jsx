@@ -1,10 +1,7 @@
-import { useState } from "react";
 import searchInfo from "./SearchBox.module.css";
-const SearchBox = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState("");
 
+const SearchBox = ({ searchTerm, onSearch }) => {
   const handleChange = (event) => {
-    setSearchTerm(event.target.value);
     onSearch(event.target.value);
   };
 

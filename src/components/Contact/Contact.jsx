@@ -1,6 +1,7 @@
 import peopleContact from "./contact.module.css";
 import { HiUser } from "react-icons/hi";
 import { FaPhoneAlt } from "react-icons/fa";
+
 const Contact = ({ name, number, onDelete }) => {
   return (
     <li className={peopleContact.listInfo}>

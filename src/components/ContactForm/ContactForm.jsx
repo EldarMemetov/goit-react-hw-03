@@ -13,6 +13,7 @@ const validationSchema = Yup.object().shape({
     .min(3, "Too short")
     .max(50, "Too long"),
 });
+
 const ContactForm = ({ addContact }) => {
   const handleSubmit = (values, actions) => {
     const newContact = { id: nanoid(), ...values };
